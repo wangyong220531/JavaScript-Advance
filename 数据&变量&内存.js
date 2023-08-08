@@ -42,5 +42,20 @@ a = { name: "Jamal" }
 console.log(a.age, b.age, a.name, b.name) // undefined 12 Jamal undefined
 var a = { age: 12 }
 var b = a
-a = { name: "Jamal", age: 13 }
-console.log(a.age, b.age, a.name, b.name) // 13 12 Jamal undefined
+a = { name: "James", age: 13 }
+console.log(a.age, b.age, a.name, b.name) // 13 12 James undefined
+b.age = 14
+console.log(a.age, b.age, a.name, b.name) // 13 14 James undefined
+function fn1(obj) {
+    obj = { name: "Jokic" }
+}
+fn1(a)
+console.log(a.age, b.age, a.name, b.name) // 13 14 James undefined
+// 当函数执行完毕后，内部的局部变量会被自动释放，变成了垃圾对象
+
+var a = 3
+function fn(a) {
+    a = a + 1
+}
+fn(a)
+console.log(a) // 3
