@@ -1,0 +1,12 @@
+var a
+console.log(a) // undefined
+a = null
+console.log(a) // null
+
+/*
+undefined和null的区别
+（1）undefined代表声明了，但未设置值
+（2）null代表明确设了空值 
+ */
+
+
