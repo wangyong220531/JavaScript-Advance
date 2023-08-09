@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="zh">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <script type="text/javascript">
+            function Foo() {}
+            let foo = new Foo()
+            console.log(foo.__proto__ === Foo.prototype) // true
+            /* 
+            函数的显示原型：Foo.prototype 
+            实例对象的隐式原型：foo.__proto__
+             */
+            Foo.prototype.test = function () {
+                console.log("test")
+            }
+            foo.test() // test
+            // 实例对象的隐式原型等于构造函数的显式原型 
+        </script>
+    </body>
+</html>

@@ -1,17 +1,23 @@
 <!DOCTYPE html>
 <html lang="zh">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <script type="text/javascript">
-        console.log(Date.prototype);
-        console.log(typeof Date.prototype); // object
-        function fun(){
-        }
-        console.log(fun.prototype);
-    </script>
-</body>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <script type="text/javascript">
+            // console.log(Date.prototype);
+            // console.log(typeof Date.prototype); // object
+            function fun() {}
+            // console.log(fun.prototype);
+            fun.prototype.test = function () {
+                console.log("xxx")
+            }
+            // console.log(fun.prototype)
+            console.log(Date.prototype.constructor === Date) // true
+            console.log(fun.prototype.constructor === fun)
+        </script>
+    </body>
 </html>
+ 
