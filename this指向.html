@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="zh">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <script type="text/javascript">
+            // console.log(this) // Window对象
+            function Person(color) {
+                console.log(1, this) // Person空对象
+                this.color = color
+                this.getColor = function () {
+                    return this.color
+                    console.log(2, this)
+                }
+                this.setColor = function (newColor) {
+                    this.color = newColor
+                    console.log(3, this)
+                }
+                console.log(4, this) // Person对象
+            }
+            // Person("#fef") // 两个Window对象
+            // var p = new Person("#fff")
+            // // console.log(p.color); // #fff
+            // // console.log(p.getColor()); // #fff
+            // p.setColor("#000")
+            // console.log(p.color) // #000
+
+            // Person("EEE") // this指向Window
+            // var p = new Person("#hhhhf") // this指向p
+            // // p.getColor() // this指向p
+            // var obj = {}
+            // p.setColor.call(obj, "green") // this指向obj
+
+            // var test = p.setColor
+            // test() // this指向Window
+
+            function fun1() {
+                function fun2() {
+                    console.log(this) // 指向Window
+                }
+                fun2()
+            }
+            fun1()
+        </script>
+    </body>
+</html>
