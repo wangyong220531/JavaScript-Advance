@@ -1,13 +1,21 @@
 <!DOCTYPE html>
 <html lang="zh">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <script type="text/javascript">
-        
-    </script>
-</body>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <script type="text/javascript">
+            function Fn() {}
+            Fn.prototype.a = "123"
+            var fn1 = new Fn()
+            console.log(fn1.a) // 123
+
+            var fn2 = new Fn()
+            fn2.a = "yyy"
+            console.log(fn1.a) // 123
+            console.log(fn2.a) // yyy
+        </script>
+    </body>
 </html>
