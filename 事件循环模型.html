@@ -6,8 +6,28 @@
         <title>Document</title>
     </head>
     <body>
+        <button id="btn">按钮</button>
         <script type="text/javascript">
-            
+            function fn1() {
+                console.log("fn1()")
+            }
+            fn1()
+            document.getElementById("btn").onclick = function () {
+                console.log("点击了btn")
+            }
+            setTimeout(function () {
+                console.log("定时器执行了")
+            }, 2000)
+            function fn2() {
+                console.log("fn2()")
+            }
+            fn2()
+            /* 
+            fn1()
+            fn2()
+            定时器执行了
+            点击了btn
+             */
         </script>
     </body>
 </html>
